@@ -12,16 +12,19 @@ class Sumtest(Resource):
         sequencia = ""
         parcial = 0
         size = len(lista)
+        contador = 0
         for i in range(size):
             atual = 0
             for j in range(i,size):
-                atual += lista[i]
-                if parcial < atual:
+                contador+=1
+                atual += lista[j]
+                if atual > parcial:
                     parcial = atual
-                    sequencia = "{}:{}".format(i,j)
+                    sequencia = i #"{0}:{1}".format(i,j)
         return {
             "data": lista,
             "result": parcial,
+            "contador":contador,
             "best-sequence": sequencia
         }
 
