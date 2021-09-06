@@ -1,3 +1,4 @@
 python -m venv sumlist
-./sumlist/scripts/activate
+source ./sumlist/scripts/activate
 pip install -r requirements.txt 
+main.py
